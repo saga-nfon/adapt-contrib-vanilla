@@ -1,0 +1,128 @@
+// New Font declarations
+// --------------------------------------------------
+@font-face {
+    font-family: 'BrixSans-bold';
+    src: url('fonts/BrixSansW01-Bold.eot');
+    src: url('fonts/BrixSansW01-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/BrixSansW01-Bold.woff2') format('woff2'), url('fonts/BrixSansW01-Bold.woff') format('woff'), url('fonts/BrixSansW01-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BrixSans-regular';
+    src: url('fonts/BrixSansW01-Regular.eot');
+    src: url('fonts/BrixSansW01-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/BrixSansW01-Regular.woff2') format('woff2'), url('fonts/BrixSansW01-Regular.woff') format('woff'), url('fonts/BrixSansW01-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BrixSans-light';
+    src: url('fonts/BrixSansW01-Light.eot');
+    src: url('fonts/BrixSansW01-Light.eot?#iefix') format('embedded-opentype'), url('fonts/BrixSansW01-Light.woff2') format('woff2'), url('fonts/BrixSansW01-Light.woff') format('woff'), url('fonts/BrixSansW01-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Font family
+// --------------------------------------------------
+@title-family: 'BrixSans-light', sans-serif;
+@body-family: 'BrixSans-light', sans-serif;
+@btn-family: 'BrixSans-regular', sans-serif;
+
+// Colour definitions
+// --------------------------------------------------
+@blue: #00B1EB;
+@blueDark: #004563;
+@grey: #4b4b4b;
+@greyDark: #000000;
+@btn-color: @blue;
+
+// Body, link, and heading colour
+// --------------------------------------------------
+@heading-color: @blueDark;
+
+// Button
+// --------------------------------------------------
+@btn-margin: 1rem;
+@btn-padding: 1rem;
+@btn-border-radius: 2px;
+@btn-color-hover: @btn-color;
+
+
+// Customization in Vanilla Theme
+// --------------------------------------------------
+
+.btn {
+
+    &-text {
+        .button-text;
+    }
+
+    &-text {
+        .no-touch &:not(.is-disabled):not(.is-locked):hover {
+            -webkit-box-shadow: 0 12px 23px -8px rgba(0,177,235,0.56);
+            -moz-box-shadow: 0 12px 23px -8px rgba(0,177,235,0.56);
+            box-shadow: 0 12px 23px -8px rgba(0,177,235,0.56);
+        }
+    }
+
+}
+.mcq__item-label.is-selected .mcq__item-answer-icon.is-checkbox .icon:before {
+    content: "\e944";
+    border: 2px solid white;
+    height: 20px;
+    width: 20px;
+    font-size: 1.0rem;
+    line-height: 1rem;
+    color: @blueDark;
+    background: white;
+    font-weight: bold;
+}
+
+.boxmenu-item__inner {
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid white !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.boxmenu-item__inner:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+.page__title{
+position: relative;
+margin-bottom: 20px !important;
+} 
+.page__title-inner:before {
+  content : "";
+  position: absolute;
+  left:  0;
+  bottom  : -10px;
+  height:  4px;
+  width   : 15%;  /* or 100px */
+  background: @blue;
+}
+
+.menu__title{
+    position: relative;
+    margin-bottom: 20px !important;
+} 
+.menu__title-inner:before {
+
+  content : "";
+  position: absolute;
+  left:  0;
+  bottom  : -10px;
+  height:  4px;
+  width   : 15%; 
+  background: @blue;
+}
+
+
+// Backword Compatibility Rules for existing plugins
+// --------------------------------------------------
+
+
