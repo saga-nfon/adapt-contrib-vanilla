@@ -1,4 +1,4 @@
-// New Font declarations
+// Font declarations
 // --------------------------------------------------
 @font-face {
     font-family: 'BrixSans-bold';
@@ -43,13 +43,18 @@
 // --------------------------------------------------
 @heading-color: @blueDark;
 
+// custom Font sizes for article titles, block titles, component titles
+// --------------------------------------------------
+@article-title-size: 2.5rem;
+@block-title-size: 2.3rem;
+@component-title-size: 1.8rem;
+
 // Button
 // --------------------------------------------------
 @btn-margin: 1rem;
 @btn-padding: 1rem;
 @btn-border-radius: 2px;
 @btn-color-hover: @btn-color;
-
 
 // Customization in Vanilla Theme
 // --------------------------------------------------
@@ -69,6 +74,9 @@
     }
 
 }
+
+// Custom checkbox
+// --------------------------------------------------
 .mcq__item-label.is-selected .mcq__item-answer-icon.is-checkbox .icon:before {
     content: "\e944";
     border: 2px solid white;
@@ -81,48 +89,293 @@
     font-weight: bold;
 }
 
+// Box Menu Customization, Height and Design
+// --------------------------------------------------
+
+.menu__item-container {
+    margin-bottom: 30px;
+}
+.menu-item {
+    padding-top: 15px;
+}
+.boxmenu-item__inner{
+    margin: 0 0.5rem 0rem !important; 
+}
 .boxmenu-item__inner {
     background: #fff;
     border-radius: 2px;
     border: 1px solid white !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    height: 100%;
 }
 .boxmenu-item__inner:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 }
-.page__title{
-position: relative;
-margin-bottom: 20px !important;
-} 
-.page__title-inner:before {
-  content : "";
-  position: absolute;
-  left:  0;
-  bottom  : -10px;
-  height:  4px;
-  width   : 15%;  /* or 100px */
-  background: @blue;
-}
 
-.menu__title{
+// Page title according to Nfon Branding
+// --------------------------------------------------
+.page__title {
     position: relative;
     margin-bottom: 20px !important;
-} 
+}
+.page__title-inner:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 4px;
+    width: 15%;
+    background: @blue;
+}
+
+.menu__title {
+
+    position: relative;
+
+    margin-bottom: 20px !important;
+}
 .menu__title-inner:before {
 
-  content : "";
-  position: absolute;
-  left:  0;
-  bottom  : -10px;
-  height:  4px;
-  width   : 15%; 
-  background: @blue;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 4px;
+    width: 15%;
+    background: @blue;
 }
+
+.article__container {
+    border-bottom: @blueDark 100px solid;
+}
+
+// Page progress tree view adjustments
+// --------------------------------------------------
+
+.block__indicator .pagelevelprogress__item-title-inner.drawer__item-title-inner {
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+.article__indicator .pagelevelprogress__item-title-inner.drawer__item-title-inner {
+    padding-left: 0;
+    font-size: 1.2rem;
+}
+.component__indicator .pagelevelprogress__item-title-inner.drawer__item-title-inner {
+    padding-left: 40px;
+    font-size: 1rem;
+}
+
+
+// Background adjustments for blank container
+// --------------------------------------------------
+
+.component__container {
+    align-items: stretch;
+}
+
+.component__inner.blank__inner {
+    height: 100%;
+    border-radius: 5px;
+}
+.block:nth-child(1) .blank__inner {
+    background-color: #b3f1fc60;
+}
+.block:nth-child(2) .blank__inner{
+    background-color: #a08aea60;
+}
+.block:nth-child(3) .blank__inner {
+    background-color: #b2d4ff60;
+}
+.block:nth-child(4) .blank__inner {
+    background-color: #a2e4f960;
+}
+.block:nth-child(5) .blank__inner {
+    background-color: #91d8f760;
+}
+.block:nth-child(6) .blank__inner {
+    background-color: #8196e860;
+}
+.block:nth-child(7) .blank__inner {
+    background-color: #82d0e560;
+}
+.block:nth-child(8) .blank__inner {
+    background-color: #8ce6ff60;
+}
+.block:nth-child(9) .blank__inner {
+    background-color: #9ed7ef60;
+}
+.block:nth-child(10) .blank__inner {
+    background-color: #bbc1f760;
+}
+.block:nth-child(11) .blank__inner {
+    background-color: #9bb8f760;
+}
+.block:nth-child(12) .blank__inner {
+    background-color: #71b7ed60;
+}
+
+// Graphic elemnt on click zoom
+// --------------------------------------------------
+
+.graphic__image:active{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+     display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+// Instructuin Design Customization
+// --------------------------------------------------
+
+.component__instruction {
+    background-color: #00b1eb12;
+    color: @blueDark;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 4px;
+}
+.component__instruction-inner {
+    padding-left: 30px;
+}
+.component__instruction:before {
+    content: "\e908";
+    display: inline-block;
+    font-family: 'vanilla';
+    font-style: initial;
+    color: @blueDark;
+    position: absolute;
+    font-size: 20px;
+    line-height: 20px;
+    animation: pulse 2s infinite;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #0045634f;
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+// Narrative Text adjustments
+// --------------------------------------------------
+
+.narrative__content-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: @blueDark;
+    padding: 7px;
+    border-radius: 5px;
+    color: white;
+}
+.narrative__content-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+// Scrolling Menu Customisation
+// --------------------------------------------------
+
+.tilesmenu-menu .menu-item-inner {
+    background: #00b1eb12;
+}
+
+.tilesmenu-menu .menu-item-title {
+    background-color: #004563;
+    color: #fff !important;
+}
+.tilesmenu-menu .menu-item-button::before {
+    color: #FFF;
+}
+.tilesmenu-menu .menu-item-button .origbutton:hover .viewtext {
+    background-color: #0C4E6A !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+.tilesmenu-menu .menu-item-button .origbutton:hover {
+    color: #0C4E6A !important;
+    cursor: default;
+}
+.tilesmenu-menu .menu-item-button .origbutton:hover::before {
+    color: #0C4E6A;
+}
+// DocFX elements css compatibility
+// --------------------------------------------------
+
+/* Alerts */
+.alert h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+}
+.alert h5:before {
+    position:relative;
+    top:1px;
+    display:inline-block;
+    font-family:'Glyphicons Halflings';
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin-right: 5px;
+    font-weight: normal;
+}
+.alert-info h5:before {
+    content:"\e086"
+}
+.alert-warning h5:before {
+    content:"\e127"
+}
+.alert-danger h5:before {
+    content:"\e107"
+}
+.alert{padding:15px;border:1px solid transparent;border-radius:4px}
+.alert h4{margin-top:0;color:inherit}
+.alert>p,.alert>ul{margin-bottom:0}
+.alert>p+p{margin-top:5px}
+.alert-dismissable,.alert-dismissible{padding-right:35px}
+.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}
+.modal,.modal-backdrop{top:0;right:0;bottom:0;left:0}
+.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}
+.alert-success hr{border-top-color:#c9e2b3}
+.alert-success .alert-link{color:#2b542c}
+.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}
+.alert-info hr{border-top-color:#a6e1ec}
+.alert-info .alert-link{color:#245269}
+.alert-warning{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}
+.alert-warning hr{border-top-color:#f7e1b5}
+.alert-warning .alert-link{color:#66512c}
+.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}
+.alert-danger hr{border-top-color:#e4b9c0}
+.alert-danger .alert-link{color:#843534}
 
 
 // Backword Compatibility Rules for existing plugins
 // --------------------------------------------------
-
-
