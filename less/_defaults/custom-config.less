@@ -98,8 +98,8 @@
 .menu-item {
     padding-top: 15px;
 }
-.boxmenu-item__inner{
-    margin: 0 0.5rem 0rem !important; 
+.boxmenu-item__inner {
+    margin: 0 0.5rem !important;
 }
 .boxmenu-item__inner {
     background: #fff;
@@ -153,8 +153,7 @@
 .article__inner {
     border-bottom: @blueDark 100px solid;
 }
-
-.article:not(:first-child){
+.article:not(:first-child) {
     margin-top: 2.5rem;
 }
 // Page progress tree view adjustments
@@ -173,7 +172,6 @@
     font-size: 1rem;
 }
 
-
 // Background adjustments for blank container
 // --------------------------------------------------
 
@@ -188,7 +186,7 @@
 .block:nth-child(1) .blank__inner {
     background-color: #b3f1fc60;
 }
-.block:nth-child(2) .blank__inner{
+.block:nth-child(2) .blank__inner {
     background-color: #a08aea60;
 }
 .block:nth-child(3) .blank__inner {
@@ -224,25 +222,34 @@
 
 // Graphic elemnt on click zoom
 // --------------------------------------------------
+.graphic__image-containerfullscreen {
 
-.graphic__image:active{
-    padding: 3em;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.91);
+    z-index: 100;
     max-width: 100%;
     max-height: 100%;
     bottom: 0;
     left: 0;
     margin: auto;
     overflow: auto;
-    position: fixed;
+    position: fixed !important;
     right: 0;
     top: 0;
     -o-object-fit: contain;
     object-fit: contain;
 }
+.graphic__image-containerfullscreen .graphic__image {
+    padding: 3rem;
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+.graphic__image-containerfullscreen .graphic__attribution {
+  display: none;
+}
 
-// Instructuin Design Customization
+// Instruction Design Customization
 // --------------------------------------------------
 
 .component__instruction {
@@ -306,21 +313,21 @@
     color: white;
 }
 
-.narrative__text-controls .narrative__content-title { 
+.narrative__text-controls .narrative__content-title {
     margin-top: 15px;
 }
 
-// att
-
-.component__attribution{
+// attribution changes
+// --------------------------------------------------
+.component__attribution {
     position: relative !important;
     color: @blueDark !important;
-    padding: 0px !important;
+    padding: 0 !important;
     text-align: right;
     background-color: rgba(0, 0, 0, 0) !important;
     margin-top: 20px;
 }
-.component__attribution .component__attribution-inner{
+.component__attribution .component__attribution-inner {
     display: inline-block;
     padding: 20px;
     background-color: #00b1eb12 !important;
@@ -353,57 +360,22 @@
 }
 // DocFX elements css compatibility
 // --------------------------------------------------
-
-/* Alerts */
-.alert h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 0;
-}
-.alert h5:before {
-    position:relative;
-    top:1px;
-    display:inline-block;
-    font-family:'Glyphicons Halflings';
-    line-height:1;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    margin-right: 5px;
-    font-weight: normal;
-}
-.alert-info h5:before {
-    content:"\e086"
-}
-.alert-warning h5:before {
-    content:"\e127"
-}
-.alert-danger h5:before {
-    content:"\e107"
-}
-.alert{padding:15px;border:1px solid transparent;border-radius:4px}
-.alert h4{margin-top:0;color:inherit}
-.alert>p,.alert>ul{margin-bottom:0}
-.alert>p+p{margin-top:5px}
-.alert-dismissable,.alert-dismissible{padding-right:35px}
-.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}
-.modal,.modal-backdrop{top:0;right:0;bottom:0;left:0}
-.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}
-.alert-success hr{border-top-color:#c9e2b3}
-.alert-success .alert-link{color:#2b542c}
-.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}
-.alert-info hr{border-top-color:#a6e1ec}
-.alert-info .alert-link{color:#245269}
-.alert-warning{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}
-.alert-warning hr{border-top-color:#f7e1b5}
-.alert-warning .alert-link{color:#66512c}
-.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}
-.alert-danger hr{border-top-color:#e4b9c0}
-.alert-danger .alert-link{color:#843534}
+.TIP {background-color: #d2f9d2; border-color: #d2f9d2; padding: 15px; border: 1px solid transparent; font-weight: bold;}
+.TIP p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e125"; margin-right: 5px; font-weight: normal;}
+.NOTE {background-color: #99e0f7; border-color: #99e0f7; padding: 15px; border: 1px solid transparent; font-weight: bold;}
+.NOTE p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e086"; margin-right: 5px; font-weight: normal;}
+.IMPORTANT {background-color: #99b5c1; border-color: #99b5c1; padding: 15px; border: 1px solid transparent; font-weight: bold;}
+.IMPORTANT p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e101"; margin-right: 5px; font-weight: normal;}
 
 // Expose Item Fixes
 // --------------------------------------------------
-.expose-item {margin-bottom: 1rem;}
-.expose-item-content .expose-item-body {word-break: break-word;}
+.expose-item {
+    margin-bottom: 1rem;
+}
+
+.expose-item-content .expose-item-body {
+    word-break: break-word;
+}
 
 // Backword Compatibility Rules for existing plugins
 // --------------------------------------------------
