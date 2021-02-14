@@ -1,5 +1,6 @@
 // Font declarations
 // --------------------------------------------------
+@import url( 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
 @font-face {
     font-family: 'BrixSans-bold';
     src: url('fonts/BrixSansW01-Bold.eot');
@@ -53,7 +54,7 @@
 // --------------------------------------------------
 @btn-margin: 1rem;
 @btn-padding: 1rem;
-@btn-border-radius: 2px;
+@btn-border-radius: 0;
 @btn-color-hover: @btn-color;
 
 // Customization in Vanilla Theme
@@ -103,7 +104,7 @@
 }
 .boxmenu-item__inner {
     background: #fff;
-    border-radius: 2px;
+    border-radius: 0 !important;
     border: 1px solid white !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -131,9 +132,7 @@
 }
 
 .menu__title {
-
     position: relative;
-
     margin-bottom: 20px !important;
 }
 .menu__title-inner:before {
@@ -181,7 +180,7 @@
 
 .component__inner.blank__inner {
     height: 100%;
-    border-radius: 5px;
+    border-radius: 0;
 }
 .block:nth-child(1) .blank__inner {
     background-color: #b3f1fc60;
@@ -246,7 +245,7 @@
     object-fit: contain;
 }
 .graphic__image-containerfullscreen .graphic__attribution {
-  display: none;
+    display: none;
 }
 
 // Instruction Design Customization
@@ -257,7 +256,7 @@
     color: @blueDark;
     font-weight: bolder;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 0;
 }
 .component__instruction-inner {
     padding-left: 30px;
@@ -303,7 +302,7 @@
     font-weight: 600;
     background: @blueDark;
     padding: 7px;
-    border-radius: 5px;
+    border-radius: 0;
     color: white;
 }
 .narrative__content-title {
@@ -358,14 +357,46 @@
 .tilesmenu-menu .menu-item-button .origbutton:hover::before {
     color: #0C4E6A;
 }
-// DocFX elements css compatibility
+
+// DocFX Markdowns css compatibility
 // --------------------------------------------------
-.TIP {background-color: #d2f9d2; border-color: #d2f9d2; padding: 15px; border: 1px solid transparent; font-weight: bold;}
-.TIP p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e125"; margin-right: 5px; font-weight: normal;}
-.NOTE {background-color: #99e0f7; border-color: #99e0f7; padding: 15px; border: 1px solid transparent; font-weight: bold;}
-.NOTE p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e086"; margin-right: 5px; font-weight: normal;}
-.IMPORTANT {background-color: #99b5c1; border-color: #99b5c1; padding: 15px; border: 1px solid transparent; font-weight: bold;}
-.IMPORTANT p:first-child::before {vertical-align: middle; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; line-height: 1; content: "\e101"; margin-right: 5px; font-weight: normal;}
+
+.NOTE, .TIP, .WARNING, .IMPORTANT, .CAUTION{
+    margin-bottom: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+}
+.NOTE p:first-child, .TIP p:first-child, .WARNING p:first-child, .IMPORTANT p:first-child, .CAUTION p:first-child{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.NOTE p, .TIP p, .WARNING p, .IMPORTANT p, .CAUTION p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.NOTE p:first-child::before, .TIP p:first-child::before, .WARNING p:first-child::before, .IMPORTANT p:first-child::before, .CAUTION p:first-child::before {
+    vertical-align: middle;
+    top: 1px;
+    display: inline-block;
+    line-height: 1;
+    font-family: 'fontawesome';
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+.NOTE { color: #004085; background-color: #cce5ff; }
+.NOTE p:first-child::before { content: "\f05a"; }
+.TIP { color: #004085; background-color: #c8eeff; }
+.TIP p:first-child::before { content: "\f0eb"; }
+.WARNING { color: #8a6d3b; background-color: #fcf8e3; }
+.WARNING p:first-child::before { content: "\f0a4"; }
+.IMPORTANT { color: #a94442; background-color: #f2dede; }
+.IMPORTANT p:first-child::before { content: "\f0a1"; }
+.CAUTION {color: #a94442;  background-color: #f2dede;}
+.CAUTION p:first-child::before { content: "\f071"; }
+
 
 // Expose Item Fixes
 // --------------------------------------------------
@@ -377,5 +408,19 @@
     word-break: break-word;
 }
 
+// Round Border fix
+// --------------------------------------------------
+.accordion__item-btn {
+    border-radius: 0 !important;
+}
+
+// Image full width issue fix
+// --------------------------------------------------
+img {
+    display: block;
+    min-width: auto;
+    margin: auto;
+    max-height: 100vh;
+}
 // Backword Compatibility Rules for existing plugins
 // --------------------------------------------------

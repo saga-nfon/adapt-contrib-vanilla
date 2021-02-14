@@ -1,9 +1,13 @@
 {
   "name": "adapt-nfon-theme",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "framework": ">=5.3",
   "homepage": "https://github.com/saga-nfon/adapt-nfon-theme",
   "issues": "https://github.com/saga-nfon/adapt-nfon-themeissues/new",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saga-nfon/adapt-nfon-theme.git"
+  },
   "theme": "NfonTheme",
   "displayName": "Nfon Adapt Theme",
   "description": "A Vanilla customized theme for Nfon",
